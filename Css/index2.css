@@ -1,0 +1,24 @@
+body {
+  background: #24353f;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.container .login_system {
+  background-color: #24353f;
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+  width: 780px;
+  padding: 30px;
+}
+.container .login_system h1 {
+  color: #17a2b8;
+  font-size: 2.5rem;
+}
+span
+{
+  color:  #ced4da;
+}
+.bar
+{
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+
+}

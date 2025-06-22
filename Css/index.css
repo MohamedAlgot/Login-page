@@ -1,0 +1,47 @@
+body {
+  background: #24353f;
+  font-family: "Titillium Web", sans-serif;
+}
+.container .login_system {
+  background-color: #24353f;
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+  width: 780px;
+}
+.container .login_system h1 {
+  color: #17a2b8;
+  font-size: 2.5rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white !important;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.form-control::placeholder {
+  font-size: 16px;
+  color: #ced4da;
+  opacity: 1;
+}
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
