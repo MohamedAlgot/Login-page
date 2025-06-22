@@ -16,7 +16,8 @@ function signDatauser() {
         Emailgn: EmailGn.value.trim(),
         passwordgn: PasswordGn.value.trim()
     };
-    arrsign = JSON.parse(localStorage.getItem("datauser"));
+
+    arrsign = JSON.parse(localStorage.getItem("datauser")) || [];
 
     for (var i = 0; i < arrsign.length; i++) {
         if (arrsign[i].Emailgn === EmailGn.value.trim()) {
@@ -24,6 +25,7 @@ function signDatauser() {
             break;
         }
     }
+
     validationGN();
 
     if (test === 1) {
@@ -32,20 +34,19 @@ function signDatauser() {
     }
 
     arrsign.push(usersign);
-
     SaveToLocalstorage();
     clearinput();
 }
 
 function loginDatauser() {
-    var arr = JSON.parse(localStorage.getItem("datauser"));
+    var arr = JSON.parse(localStorage.getItem("datauser")) || [];
     var email = EmailIn.value.trim();
     var password = PasswordIN.value.trim();
 
     for (var i = 0; i < arr.length; i++) {
         if (email === arr[i].Emailgn && password === arr[i].passwordgn) {
             localStorage.setItem("currentUser", JSON.stringify(arr[i]));
-            window.location.href = "./html/index3.html"; 
+            window.location.href = "/Login-page/html/index3.html";
             return true;
         }
     }
@@ -76,22 +77,19 @@ function validationIN() {
 
 function validationGN() {
     if (
-        Name.value.trim() !== " " &&
-        EmailGn.value.trim() !== " " &&
-        PasswordGn.value.trim() !== " "
+        Name.value.trim() !== "" &&
+        EmailGn.value.trim() !== "" &&
+        PasswordGn.value.trim() !== ""
     ) {
         errorGN.innerHTML = `
             <p class="text-success text-center d-block my-2">Success</p>`;
     } 
-    if (
-        Name.value.trim() == " " ||
-        EmailGn.value.trim() == " " ||
-        PasswordGn.value.trim() == " "
-    ) {
+    else {
         errorGN.innerHTML = `
             <p class="text-danger text-center d-block">All inputs are required</p>`;
     }
-    if (test == 1) {
+
+    if (test === 1) {
         errorGN.innerHTML = `
             <p class="text-danger text-center d-block">email already exists</p>`;
         test = 0;
@@ -106,6 +104,6 @@ if (Welcome) {
                 <h1>Welcome ${user.namegn}</h1>
             </div>`;
     } else {
-        window.location.href = "../index.html";
+        window.location.href = "/Login-page/index.html";
     }
 }
